@@ -55,10 +55,11 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->plugin(
+            ->plugins([
                 BreezyCore::make()
                     ->myProfile(shouldRegisterNavigation: true, navigationGroup: "Settings")
-                    ->enableTwoFactorAuthentication()
-            );
+                    ->enableTwoFactorAuthentication(),
+                    \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+            ]);
     }
 }

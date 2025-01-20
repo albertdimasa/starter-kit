@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Admin',
@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // call seeder
-        $this->call(BookSeeder::class);
+        $this->call([
+            BookSeeder::class,
+            CustomerSeeder::class
+        ]);
     }
 }

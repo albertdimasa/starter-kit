@@ -19,7 +19,7 @@ class BookFactory extends Factory
         return [
             'title' => fake()->word(),
             'author' => fake()->name(),
-            'description' => fake()->text,
+            'description' => fake()->text(),
             'image' => 'https://dummyimage.com/600x400/000/fff',
         ];
     }
